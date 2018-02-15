@@ -1,0 +1,15 @@
+Lab 3
+
+Aim:
+In variable partitioning system results in external fragmentation.The aim of the program is to shift all the fragments at the end of the memory so that we have a large free block.
+
+Abstract:
+In variable partitioning system we allocate the memory in continuous fashion.After deletion of the a process from the memory we have a fixed size block.If we allocation a process of smaller size it results in the formation of fragments.There arises a case where we have total fragment size greater than process size but we cannot allocate it.So to overcome this we use compaction , where we collect all the fragments and make it a large free block of memory.
+
+Here whenever we remove the process from memory we reallocate the processes such that the free memory is collected at the end.And if we have two blocks of free memory then we combine it.
+I have used these functions that does the following:
+    1.defragment:
+        does the job of swapping the process
+        decreases the size of blocks by removing internal fragmentation and swaps.
+    2.merge block:merges two free blocks
+    3.clean block:does the job of deleting.

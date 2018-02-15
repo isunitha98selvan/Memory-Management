@@ -1,0 +1,21 @@
+LAB 1
+
+Aim:
+1.To implement fixed sized contiguous memory allocation system for best fit, worst fit and first fit.
+2.To implement variable sized contiguous memory allocation system for best fit,worst fit and first fit.
+
+Abstract: 
+Dynamic memory allocation involves 2 central commands: malloc allocates a portion of unused memory for use by a process, while free frees a previously-allocated portion of memory, allowing it to be reused. Fixed-size blocks allocation, also called memory pool allocation, uses a free list of fixed-size blocks of memory (often all of the same size). This  suffers from fragmentation, especially with long memory addresses. However, due to the significantly reduced overhead this method can substantially improve performance for objects that need frequent allocation / de-allocation.
+
+In variable sized memory allocation, blocks of memory based on the process size are allocated. This however can result in internal fragmentation.In this method when a partition is free a process is selected from the input queue and is loaded into the free partition. When the process terminates the partition becomes available for another process. 
+
+A process is allocated to a frame based on three different techniques:
+1.First fit: The first free frame larger than the process is allocated to the process.
+2.Best fit: The smallest free frame that is larger than the process is allocated to the process.
+3.Worst fit: The biggest free frame that is larger than the process is allocated to the process.
+If no frame larger than the process is available, the system has to wait till some process is freed.
+
+We use an array of structure to simulate these memory allocation schemes.
+
+
+

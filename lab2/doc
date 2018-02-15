@@ -1,0 +1,24 @@
+LAB 2
+
+Aim: 1.To implement a paging system for memory allocation of process in java using Linked list.
+     2.To implement a paging system for memory allocation of process in java using page table.
+
+Abstract: In computer operating systems, paging is a memory management scheme by which a computer stores and retrieves data from secondary storage for use in main memory. In this scheme, the operating system retrieves data from secondary storage in same-size blocks called pages. Paging is an important part of virtual memory implementations in modern operating systems, using secondary storage to let programs exceed the size of available physical memory.
+Some of the advantages of paging are:
+Allocating memory is easy and cheap
+Any free page is ok, OS can take first one out of list it keeps
+Eliminates external fragmentation
+Data (page frames) can be scattered all over PM
+
+Methodology: The main memory in this implementation is represented by an array in which each element int the array corresponds to a frame.The array contains the memory location of the page signifying that that particular frame has been allocated that particular page.
+The basic outline of the program is to use a class as an abstraction of a page containing necessary properties as its attributes.
+Some of the necessary attributes include:
+Process number to which the page belongs.
+The page number (an identification to distinguish pages).
+A node pointer to the next page(A page is a node in the linked list).
+A name for user identification.
+The main functions in use are:
+allocate:This function traverses the main memory and checks for a free frame.If such a frame exists it assigns the location of the different pages of the process in different frame location.The attributes of the frame are also set in this method
+delete:
+This function gets the frame in which the first page address is stored.And then it uses the linked list i.e pages to traverse each page and delete its location from main memory.
+                

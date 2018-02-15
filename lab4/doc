@@ -1,0 +1,16 @@
+LAB 4
+
+Aim: To implement the Binary Buddy memory allocation technique in C using arrays and   pointers.
+
+Abstract: The buddy memory allocation technique is a memory allocation algorithm that divides memory into partitions to try to satisfy a memory request as suitably as possible. This system makes use of splitting memory into halves to try to give a best fit. Compared to the more complex memory allocation techniques that some modern operating systems use, buddy memory allocation is relatively easy to implement. It supports limited but efficient splitting and coalescing of memory blocks. The binary buddy system allows a single allocation block to be split, to form two blocks half the size of the parent block. The memory consists of a collection of blocks of consecutive memory, each of which is a power of two in size. Each block is marked either occupied or free, depending on whether it is allocated to the user. 
+
+The system provides two operations for supporting dynamic memory allocation:
+
+Allocate (2k): Finds a free block of size 2k, marks it as occupied and then returns a pointer to it.
+The buddy system maintains a list of the free blocks of each size, which makes it easier to find a block of desired size, if one is available.
+The block is removed from free list
+If the found block is larger than the requested size, then the block is split in half until optimal size block is obtained. One of those blocks will be occupied while the remaining are added to the free list.
+
+Deallocate(B):  Marks the previously allocated block B as free and may merge it with other like sized free block to form a larger free block.
+When a block is deallocated, the buddy system checks whether the block can be merged.
+The merging process continues till the buddy of the resulting block is free.
